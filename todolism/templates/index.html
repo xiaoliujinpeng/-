@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+
+    <!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="{{url_for("static",filename="css/index.css")}}"></script>
+</head>
+
+<body>
+
+    <div class="container-fluid" style="padding:0;">
+        <div class="raw">
+            <nav class="navbar bg-dark nav-dark">
+                <a href="#" class="navbar-brand">Todolism</a>
+            </nav>
+        </div>
+        <div class="raw">
+            <div class="col-sm-6 offset-3">
+                <ul class="nav mt-2">
+                    <li class="nav-item"><a href="#" class="nav-link shadow-sm p-3 mb-2 rounded border-bottom">每日事务</a>
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link shadow-sm p-3 mb-2 rounded">任务</a></li>
+                    <li class="nav-item ml-auto"><a href="#" class="nav-link shadow-sm p-3 mb-2 rounded"
+                            id="addafair">添加</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="raw">
+            <div class="col-sm-6 offset-md-3" id="alldays">
+                <ul class="list-group" id="list">
+<!--                    <div class="card mt-1">-->
+<!--                        <div class="card-header">-->
+<!--                            <a href="#" data-toggle="collapse" class="card-link d-block" data-target="#text1">day1</a>-->
+<!--                        </div>-->
+<!--                        <div class="collapse" data-parent="#alldays" id="text1">-->
+<!--                            <div class="raw clearfix mr-3 mt-2">-->
+<!--                                <button class="btn btn-primary float-right add_item_btn">添加</button>-->
+<!--                            </div>-->
+<!--                            <div class="card-body">-->
+<!--                                <ul class="list-group">-->
+<!--                                    <a href="" class="list-group-item list-group-item-action">112</a>-->
+<!--                                    <a href="" class="list-group-item list-group-item-action">fsa</a>-->
+<!--                                    <a href="" class="list-group-item list-group-item-action">fa</a>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="card mt-1">-->
+<!--                        <div class="card-header">-->
+<!--                            <a href="#" data-toggle="collapse" class="card-link d-block" data-target="#text2">day1</a>-->
+<!--                        </div>-->
+<!--                        <div class="collapse" data-parent="#alldays" id="text2">-->
+<!--                            <div class="card-body">-->
+<!--                                <ul class="list-group">-->
+<!--                                    <a href="" class="list-group-item list-group-item-action">112</a>-->
+<!--                                    <a href="" class="list-group-item list-group-item-action">fsa</a>-->
+<!--                                    <a href="" class="list-group-item list-group-item-action">fa</a>-->
+<!--                                </ul>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+                                <div class="modal fade" id="del_day_sure" tabindex="-1" role="dialog"
+                                aria-labelledby="sureLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="sureLabel">Confirm</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            确定要删除这天的记录吗?
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">关闭</button>
+                                            <button type="button" class="btn btn-primary">确定</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    <script>
+        var url_new_item="{{url_for("todo.new_item",_external=False)}}";
+        var url_new_day="{{url_for("todo.new_dayEvent",_external=False)}}";
+        var url_index="{{url_for("todo.index",_external=False)}}";
+    </script>
+    <script src="{{url_for("static",filename="js/script.js")}}"></script>
+</body>
+
+</html>
